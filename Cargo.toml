@@ -1,0 +1,23 @@
+[package]
+name = "tiled_preprocessor"
+version = "0.1.0"
+authors = ["Alec Deason <alec@tinycountry.com>"]
+edition = "2018"
+
+[lib]
+name = "tiled_preprocessor"
+
+[[bin]]
+name = "tiled_preprocessor"
+
+[dependencies]
+sheep = { git = "https://github.com/amethyst/sheep.git" }
+tiled = "0.8.0"
+structopt = "0.2.15"
+image = "0.20"
+ron = "0.4"
+rendy = { version = "0.2", default-features = false, features = ["base", "wsi-winit", "empty", "mesh-obj", "texture-image", "texture-palette", "serde-1"] }
+serde = { version = "1.0.91", features=["derive"] }
+
+[dependencies.amethyst]
+git = "https://github.com/amethyst/amethyst"

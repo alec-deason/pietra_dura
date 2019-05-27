@@ -1,0 +1,1555 @@
+(
+    entities: [
+        (
+            data: Some((
+                sheet: Some(Sheet(
+                    texture: File("/home/alec/Code/tiled_preprocessor/game_integration/examples/assets/prefab/map/sprite_sheet_0.png", ("IMAGE", (
+                        min_filter: Nearest,
+                        mag_filter: Nearest,
+                        mip_filter: Nearest,
+                        wrap_mode: (Tile, Tile, Tile),
+                        lod_bias: (0),
+                        lod_range: (
+                            start: (0),
+                            end: (-1536),
+                        ),
+                        comparison: None,
+                        border: (0),
+                        anisotropic: Off,
+                    ))),
+                    sprites: [
+                        List((
+                            texture_width: 96,
+                            texture_height: 32,
+                            sprites: [
+                                (
+                                    x: 0,
+                                    y: 0,
+                                    width: 32,
+                                    height: 32,
+                                    offsets: None,
+                                    flip_horizontal: false,
+                                    flip_vertical: false,
+                                ),
+                                (
+                                    x: 32,
+                                    y: 0,
+                                    width: 32,
+                                    height: 32,
+                                    offsets: None,
+                                    flip_horizontal: false,
+                                    flip_vertical: false,
+                                ),
+                                (
+                                    x: 64,
+                                    y: 0,
+                                    width: 32,
+                                    height: 32,
+                                    offsets: None,
+                                    flip_horizontal: false,
+                                    flip_vertical: false,
+                                ),
+                            ],
+                        )),
+                    ],
+                    name: Some("level_spritesheet_0"),
+                )),
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (48, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (80, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (112, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (144, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (176, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (208, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (240, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (272, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -16, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (48, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (80, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (112, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (144, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (176, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (208, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (240, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (272, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -48, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (48, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (80, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (112, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (144, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (176, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (208, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (240, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (272, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -80, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (48, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (80, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (112, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (144, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (176, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (208, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (240, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (272, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -112, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (48, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (80, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (112, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (144, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (176, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (208, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (240, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (272, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -144, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (48, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (80, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (112, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (144, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (176, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (208, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (240, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (272, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -176, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (48, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (80, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (112, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (144, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (176, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 2,
+                )),
+                transform: Some((
+                    translation: (208, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (240, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (272, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -208, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (48, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (80, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (112, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (144, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (176, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (208, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (240, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (272, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -240, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (48, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (80, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (112, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (144, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (176, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (208, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (240, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 1,
+                )),
+                transform: Some((
+                    translation: (272, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -272, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (16, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (48, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (80, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (112, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (144, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (176, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (208, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (240, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (272, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("level_spritesheet_0"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (304, -304, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: (),
+            )),
+        ),
+    ],
+)

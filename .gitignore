@@ -1,0 +1,7 @@
+**/target
+assets/prepared
+thread_profile.json
+massif.out.*
+perf.data*
+**/*.rs.bk
+-
