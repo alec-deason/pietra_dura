@@ -23,8 +23,11 @@ use amethyst::{
     window::{ScreenDimensions, Window, WindowBundle, DisplayConfig},
     Application, GameData, GameDataBuilder, SimpleState, SimpleTrans, StateData, Trans,
 };
+use pietra_dura_nphysics::PhysicsBundle;
 use example_game_integration::LevelPrefab;
 use std::sync::Arc;
+use nalgebra::Vector2;
+use nphysics2d::world::World as PhysicsWorld;
 
 /// The main state
 #[derive(Default)]
@@ -38,6 +41,10 @@ impl SimpleState for Example {
         let StateData { world, .. } = data;
         // Crates new progress counter
         self.progress_counter = Some(Default::default());
+
+        let mut physics_world: PhysicsWorld<f32> = PhysicsWorld::new();
+        physics_world.set_gravity(Vector2::new(0.0, -980.0));
+        world.add_resource(physics_world);
 
         // Starts asset loading
         let level_prefab = world.exec(|loader: PrefabLoader<'_, LevelPrefab>| {
@@ -90,6 +97,7 @@ fn main() -> amethyst::Result<()> {
     let game_data = GameDataBuilder::default()
         .with_bundle(WindowBundle::from_config(DisplayConfig::default()))?
         .with_bundle(TransformBundle::new())?
+        .with_bundle(PhysicsBundle::new())?
         .with(
             PrefabLoaderSystem::<LevelPrefab>::default(),
             "scene_loader",

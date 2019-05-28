@@ -63,7 +63,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -78,7 +78,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -93,7 +93,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -108,7 +108,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -123,7 +123,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -138,7 +138,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -153,7 +153,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -168,7 +168,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -183,7 +183,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -198,7 +198,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -213,7 +213,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -228,7 +228,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -243,7 +243,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -258,7 +258,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -273,7 +273,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -288,7 +288,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -303,7 +303,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -318,7 +318,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -333,7 +333,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -348,7 +348,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -363,7 +363,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -378,7 +378,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -393,7 +393,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -408,7 +408,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -423,7 +423,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -438,7 +438,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -453,7 +453,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -468,7 +468,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -483,7 +483,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -498,7 +498,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -513,7 +513,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -528,7 +528,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -543,7 +543,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -558,7 +558,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -573,7 +573,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -588,7 +588,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -603,7 +603,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -618,7 +618,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -633,7 +633,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -648,7 +648,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -663,7 +663,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -678,7 +678,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -693,7 +693,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -708,7 +708,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -723,7 +723,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -738,7 +738,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -753,7 +753,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -768,7 +768,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -783,7 +783,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -798,7 +798,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -813,7 +813,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -828,7 +828,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -843,7 +843,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -858,7 +858,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -873,7 +873,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -888,7 +888,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -903,7 +903,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -918,7 +918,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -933,7 +933,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -948,7 +948,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -963,7 +963,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -978,7 +978,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -993,7 +993,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1008,7 +1008,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1023,7 +1023,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1038,7 +1038,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1053,7 +1053,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1068,7 +1068,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1083,7 +1083,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1098,7 +1098,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1113,7 +1113,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1128,7 +1128,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1143,7 +1143,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1158,7 +1158,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1173,7 +1173,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1188,7 +1188,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1203,7 +1203,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1218,7 +1218,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1233,7 +1233,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1248,7 +1248,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1263,7 +1263,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1278,7 +1278,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1293,7 +1293,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1308,7 +1308,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1323,7 +1323,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1338,7 +1338,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1353,7 +1353,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1368,7 +1368,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1383,7 +1383,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1398,7 +1398,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1413,7 +1413,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1428,7 +1428,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1443,7 +1443,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1458,7 +1458,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1473,7 +1473,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1488,7 +1488,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1503,7 +1503,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1518,7 +1518,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1533,7 +1533,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1548,7 +1548,7 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: Tile(()),
             )),
         ),
         (
@@ -1596,7 +1596,203 @@
                     rotation: (0, 0, 0, 1),
                     scale: (1, 1, 1),
                 )),
-                detail: (),
+                detail: StaticSprite(()),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: Some((
+                    sheet: Some("map_sprite_sheet_1"),
+                    sprite_number: 0,
+                )),
+                transform: Some((
+                    translation: (162, -60, 0),
+                    rotation: (0, 0, 0, 1),
+                    scale: (1, 1, 1),
+                )),
+                detail: Physics((
+                    colliders: [
+                        (
+                            shape: Ball(
+                                radius: 16,
+                            ),
+                            density: 1,
+                            restitution: 0.8,
+                            friction: 0.5,
+                            offset_x: 0,
+                            offset_y: 0,
+                            is_sensor: false,
+                            collision_group: (
+                                membership: [
+                                    1,
+                                ],
+                                whitelist: [
+                                    1,
+                                ],
+                                blacklist: [
+                                ],
+                            ),
+                            location: None,
+                        ),
+                    ],
+                    gravity_enabled: true,
+                    no_rotate: false,
+                    collider_only: false,
+                    location: Some((162, -60)),
+                )),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: None,
+                transform: None,
+                detail: Physics((
+                    colliders: [
+                        (
+                            shape: Rect(
+                                width: 320,
+                                height: 32,
+                            ),
+                            density: 1,
+                            restitution: 0.8,
+                            friction: 0.5,
+                            offset_x: 0,
+                            offset_y: 0,
+                            is_sensor: false,
+                            collision_group: (
+                                membership: [
+                                    1,
+                                ],
+                                whitelist: [
+                                    1,
+                                ],
+                                blacklist: [
+                                ],
+                            ),
+                            location: Some((160, -16)),
+                        ),
+                    ],
+                    gravity_enabled: false,
+                    no_rotate: false,
+                    collider_only: true,
+                    location: None,
+                )),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: None,
+                transform: None,
+                detail: Physics((
+                    colliders: [
+                        (
+                            shape: Rect(
+                                width: 32,
+                                height: 288,
+                            ),
+                            density: 1,
+                            restitution: 0.8,
+                            friction: 0.5,
+                            offset_x: 0,
+                            offset_y: 0,
+                            is_sensor: false,
+                            collision_group: (
+                                membership: [
+                                    1,
+                                ],
+                                whitelist: [
+                                    1,
+                                ],
+                                blacklist: [
+                                ],
+                            ),
+                            location: Some((304, -176)),
+                        ),
+                    ],
+                    gravity_enabled: false,
+                    no_rotate: false,
+                    collider_only: true,
+                    location: None,
+                )),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: None,
+                transform: None,
+                detail: Physics((
+                    colliders: [
+                        (
+                            shape: Rect(
+                                width: 288,
+                                height: 32,
+                            ),
+                            density: 1,
+                            restitution: 0.8,
+                            friction: 0.5,
+                            offset_x: 0,
+                            offset_y: 0,
+                            is_sensor: false,
+                            collision_group: (
+                                membership: [
+                                    1,
+                                ],
+                                whitelist: [
+                                    1,
+                                ],
+                                blacklist: [
+                                ],
+                            ),
+                            location: Some((144, -304)),
+                        ),
+                    ],
+                    gravity_enabled: false,
+                    no_rotate: false,
+                    collider_only: true,
+                    location: None,
+                )),
+            )),
+        ),
+        (
+            data: Some((
+                sheet: None,
+                render: None,
+                transform: None,
+                detail: Physics((
+                    colliders: [
+                        (
+                            shape: Rect(
+                                width: 32,
+                                height: 256,
+                            ),
+                            density: 1,
+                            restitution: 0.8,
+                            friction: 0.5,
+                            offset_x: 0,
+                            offset_y: 0,
+                            is_sensor: false,
+                            collision_group: (
+                                membership: [
+                                    1,
+                                ],
+                                whitelist: [
+                                    1,
+                                ],
+                                blacklist: [
+                                ],
+                            ),
+                            location: Some((16, -160)),
+                        ),
+                    ],
+                    gravity_enabled: false,
+                    no_rotate: false,
+                    collider_only: true,
+                    location: None,
+                )),
             )),
         ),
     ],

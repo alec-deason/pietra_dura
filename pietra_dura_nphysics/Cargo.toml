@@ -1,0 +1,17 @@
+[package]
+name = "pietra_dura_nphysics"
+version = "0.1.0"
+authors = ["Alec Deason <alec@tinycountry.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nalgebra = "0.18.0"
+ncollide2d = "0.19.1"
+nphysics2d = "0.11.1"
+serde = { version = "1.0.91", features=["derive"] }
+specs-derive = "*"
+
+[dependencies.amethyst]
+git = "https://github.com/amethyst/amethyst"

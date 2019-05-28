@@ -8,8 +8,12 @@ edition = "2018"
 serde = { version = "1.0.91", features=["derive"] }
 specs-derive = "*"
 structopt = { version = "0.2.15", optional = true }
+pietra_dura_nphysics = { path = "../pietra_dura_nphysics" }
 pietra_dura_tiled = { path = "../pietra_dura_tiled", optional = true }
 tiled = { version = "0.8.0", optional = true }
+nalgebra = "0.18.0"
+nphysics2d = "0.11.1"
+
 
 
 [features]

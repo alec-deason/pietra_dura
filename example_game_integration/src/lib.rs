@@ -9,9 +9,17 @@ use amethyst::{
 use serde::{Deserialize, Serialize};
 use specs_derive::Component;
 
+use pietra_dura_nphysics::{
+    PhysicsEntityPrefab
+};
+
 #[cfg(feature = "asset-prep")]
 use pietra_dura_tiled::{
     TiledConverter, SpriteContext, SpriteSheetPrefab as SpriteSheetPrefabProxy, SpriteRenderPrefab as SpriteRenderPrefabProxy
+};
+#[cfg(feature = "asset-prep")]
+use pietra_dura_nphysics::{
+    CollisionGroupPrefab, ColliderPrefab, ShapePrefab
 };
 #[cfg(feature = "asset-prep")]
 use amethyst::{
@@ -27,15 +35,20 @@ pub struct LevelPrefab {
     sheet: Option<SpriteSheetPrefab>,
     render: Option<SpriteRenderPrefab>,
     transform: Option<Transform>,
-    #[prefab(Component)]
-    detail: Tile,
+    detail: Detail,
 }
 
+#[derive(Debug, Clone, Deserialize, Serialize, PrefabData)]
+pub enum Detail {
+    Tile(#[prefab(Component)] Tile),
+    StaticSprite(#[prefab(Component)] StaticSprite),
+    Physics(PhysicsEntityPrefab),
+}
 #[derive(Default, Debug, Copy, Clone, Component, Serialize, Deserialize)]
 pub struct Tile;
 
 #[derive(Default, Debug, Copy, Clone, Component, Serialize, Deserialize)]
-pub struct StaticObject;
+pub struct StaticSprite;
 
 // Because a number of important Prefabs in Amethyst are currently impossible
 // to construct or serialize outside of amethyst itself we will actually
@@ -44,12 +57,12 @@ pub struct StaticObject;
 //
 // Some types, like `Transform`, serialize perfectly so we can use those directly.
 #[cfg(feature = "asset-prep")]
-#[derive(Default, Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize)]
 pub struct LevelPrefabProxy {
     pub sheet: Option<SpriteSheetPrefabProxy>,
     pub render: Option<SpriteRenderPrefabProxy>,
     pub transform: Option<Transform>,
-    pub detail: Tile,
+    pub detail: Detail,
 
 }
 #[cfg(feature = "asset-prep")]
@@ -79,7 +92,7 @@ impl TiledConverter<'_, LevelPrefab> for LevelPrefab {
                 sheet: ctx.sprite_sheet.clone(),
                 render: Some(render),
                 transform: Some(transform),
-                detail: Tile,
+                detail: Detail::Tile(Tile),
             })
         } else {
             None
@@ -88,27 +101,103 @@ impl TiledConverter<'_, LevelPrefab> for LevelPrefab {
 
     fn convert_object(ctx: &Option<SpriteContext>, layer: usize, object: &Object) -> Option<Self::PrefabProxy> {
         // If ctx is None then this object doesn't have a tile image associated with it.
-        if let Some(ctx) = ctx {
-            if object.obj_type == "static" {
+        match object.obj_type.as_ref() {
+            "static" => {
+                if let Some(ctx) = ctx {
+                    if let ObjectShape::Rect { width, height } = object.shape {
+                        let render = SpriteRenderPrefabProxy {
+                            sheet: Some(SpriteSheetReference::Name(ctx.name.clone())),
+                            sprite_number: ctx.sprite_id as usize,
+                        };
+                        let mut transform = Transform::default();
+                        transform.set_translation_xyz(
+                            object.x + width / 2.0,
+                            -object.y + height / 2.0,
+                            layer as f32,
+                        );
+                        return Some(Self::PrefabProxy {
+                            sheet: ctx.sprite_sheet.clone(),
+                            render: Some(render),
+                            transform: Some(transform),
+                            detail: Detail::StaticSprite(StaticSprite),
+                        })
+                    }
+                }
+            },
+            "dynamic" => {
+                if let Some(ctx) = ctx {
+                    if let ObjectShape::Rect { width, height } = object.shape {
+                        let render = SpriteRenderPrefabProxy {
+                            sheet: Some(SpriteSheetReference::Name(ctx.name.clone())),
+                            sprite_number: ctx.sprite_id as usize,
+                        };
+                        let mut transform = Transform::default();
+                        transform.set_translation_xyz(
+                            object.x + width / 2.0,
+                            -object.y + height / 2.0,
+                            layer as f32,
+                        );
+                        return Some(Self::PrefabProxy {
+                            sheet: ctx.sprite_sheet.clone(),
+                            render: Some(render),
+                            transform: Some(transform),
+                            detail: Detail::Physics(PhysicsEntityPrefab {
+                                colliders: vec![ColliderPrefab {
+                                    // Assume that everything is a circle
+                                    shape: ShapePrefab::Ball { radius: width / 2.0 },
+                                    density: 1.0,
+                                    restitution: 0.8,
+                                    friction: 0.5,
+                                    offset_x: 0.0,
+                                    offset_y: 0.0,
+                                    is_sensor: false,
+                                    collision_group: CollisionGroupPrefab {
+                                        membership: vec![1],
+                                        whitelist: vec![1],
+                                        blacklist: vec![],
+                                    },
+                                    location: None,
+                                }],
+                                collider_only: false,
+                                gravity_enabled: true,
+                                no_rotate: false,
+                                location: Some((object.x + width / 2.0, -object.y + height / 2.0)),
+                            }),
+                        })
+                    }
+                }
+            },
+            "collision" => {
                 if let ObjectShape::Rect { width, height } = object.shape {
-                    let render = SpriteRenderPrefabProxy {
-                        sheet: Some(SpriteSheetReference::Name(ctx.name.clone())),
-                        sprite_number: ctx.sprite_id as usize,
-                    };
-                    let mut transform = Transform::default();
-                    transform.set_translation_xyz(
-                        object.x + width / 2.0,
-                        -object.y + height / 2.0,
-                        layer as f32,
-                    );
                     return Some(Self::PrefabProxy {
-                        sheet: ctx.sprite_sheet.clone(),
-                        render: Some(render),
-                        transform: Some(transform),
-                        detail: Tile,
+                        sheet: None,
+                        render: None,
+                        transform: None,
+                        detail: Detail::Physics(PhysicsEntityPrefab {
+                            colliders: vec![ColliderPrefab {
+                                shape: ShapePrefab::Rect { width, height },
+                                density: 1.0,
+                                restitution: 0.8,
+                                friction: 0.5,
+                                offset_x: 0.0,
+                                offset_y: 0.0,
+                                is_sensor: false,
+                                collision_group: CollisionGroupPrefab {
+                                    membership: vec![1],
+                                    whitelist: vec![1],
+                                    blacklist: vec![],
+                                },
+                                location: Some((object.x + width / 2.0, -object.y - height / 2.0)),
+                            }],
+                            collider_only: true,
+                            gravity_enabled: false,
+                            no_rotate: false,
+                            location: None,
+                        }),
                     })
                 }
-            }
+            },
+            _ => (),
         }
         None
     }
