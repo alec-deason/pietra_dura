@@ -6,24 +6,14 @@ use rendy::hal::image::SamplerInfo;
 use serde::Serialize;
 
 #[derive(Serialize, Debug, Clone)]
-pub struct PrefabEntity {
-    pub data: Option<LevelPrefab>,
+pub struct PrefabEntity<P> {
+    pub data: Option<P>
 }
 #[derive(Serialize, Debug)]
-pub struct Prefab {
-    pub entities: Vec<PrefabEntity>,
+pub struct Prefab<P> {
+    pub entities: Vec<PrefabEntity<P>>,
 }
 
-#[derive(Debug, Clone, Serialize)]
-pub struct Tile;
-
-#[derive(Debug, Clone, Serialize)]
-pub struct LevelPrefab {
-    pub sheet: Option<SpriteSheetPrefab>,
-    pub render: Option<SpriteRenderPrefab>,
-    pub transform: Option<Transform>,
-    pub detail: Tile,
-}
 #[derive(Debug, Clone, Serialize)]
 pub enum TexturePrefab {
     File(String, (String, SamplerInfo)),

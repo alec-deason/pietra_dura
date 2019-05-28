@@ -1,6 +1,6 @@
-mod prefabs;
+mod prefab_proxies;
 
-use std::collections::{HashSet, HashMap};
+use std::collections::HashSet;
 use image::{
     png::PNGEncoder,
     ColorType,
@@ -17,7 +17,7 @@ use amethyst::{
     renderer::{
         formats::texture::ImageFormat,
         sprite::{
-            prefab::{SpriteSheetPrefab as RealSpriteSheetPrefab, SpriteRenderPrefab as RealSpriteRenderPrefab, SpriteSheetReference},
+            prefab::{SpriteSheetPrefab as RealSpriteSheetPrefab, SpriteRenderPrefab as RealSpriteRenderPrefab},
             SpriteList, SpritePosition, Sprites
         },
     },
@@ -31,25 +31,44 @@ use specs_derive::Component;
 use sheep::{AmethystFormat, InputSprite, SimplePacker};
 
 
-pub use prefabs::*;
+pub use prefab_proxies::*;
 
-use tiled::{Tile, Object, Map, parse_file};
+use tiled::{Object, Map, parse_file};
 
 pub struct SpriteContext {
     pub sprite_sheet: Option<SpriteSheetPrefab>,
     pub name: String,
-    pub sprite_id: usize,
+    pub sprite_sheet_id: u32,
+    pub sprite_id: u32,
 }
 
-pub trait MapObject {
-}
-
-pub trait FromTile {
-    fn convert(tile: &Tile, x: f32, y: f32, layer: usize, context: &SpriteContext) -> Self;
-}
-
-pub trait FromObject {
-    fn convert(tile: &Object, layer: usize, context: Option<&SpriteContext>) -> Self;
+impl SpriteContext {
+    pub fn from_gid(gid: u32, map: &Map, sprite_sheets: &Vec<SpriteSheetPrefab>, used_sprite_sheets: &HashSet<u32>) -> Option<Self> {
+        if gid != 0 {
+            let mut sprite_sheet_id = 0u32;
+            let mut sprite_id = 0;
+            for (i, tileset) in map.tilesets.iter().enumerate() {
+                if tileset.first_gid > gid {
+                    break;
+                }
+                sprite_sheet_id = i as u32; 
+                sprite_id = gid - tileset.first_gid;
+            }
+            let sprite_sheet = if used_sprite_sheets.contains(&sprite_sheet_id) {
+                None
+            } else {
+                Some(sprite_sheets[sprite_sheet_id as usize].clone())
+            };
+            Some(SpriteContext {
+                sprite_sheet,
+                name: format!("map_sprite_sheet_{}", sprite_sheet_id),
+                sprite_sheet_id,
+                sprite_id,
+            })
+        } else {
+            None
+        }
+    }
 }
 
 pub enum MapFile {
@@ -60,9 +79,56 @@ pub trait TiledConverter<'s, P>
     where P: PrefabData<'s> {
         type PrefabProxy: Serialize;
 
-        fn from_map(input: &Path, map_prefix: &Path) -> MapPrefab<P, Self::PrefabProxy>;
-        fn convert_tile(ctx: &SpriteContext, x: f32, y: f32, layer: usize) -> Option<Self::PrefabProxy>;
-        fn convert_object(object_type: &str, ctx: Option<&SpriteContext>, layer: usize) -> Option<Self::PrefabProxy>;
+        fn convert_tile(ctx: &Option<SpriteContext>, x: f32, y: f32, layer: usize) -> Option<Self::PrefabProxy>;
+        fn convert_object(ctx: &Option<SpriteContext>, layer: usize, object: &Object) -> Option<Self::PrefabProxy>;
+
+        fn from_map(input: &Path, map_prefix: &Path) -> MapPrefab<P, Self::PrefabProxy> {
+            let input_dir = input.parent().unwrap();
+            let map = parse_file(input).unwrap();
+
+            let (mut sprite_files, sprite_sheets): (Vec<MapFile>, Vec<SpriteSheetPrefab>) = sprite_sheets_from_tilesets(&map, &input_dir, map_prefix).drain(..).unzip();
+
+            let mut used_sprite_sheets = HashSet::new();
+            let mut entities = Vec::new();
+            for (z, layer) in map.layers.iter().enumerate() {
+                for (y, row) in layer.tiles.iter().enumerate() {
+                    for (x, gid) in row.iter().enumerate() {
+                        let ctx = SpriteContext::from_gid(*gid, &map, &sprite_sheets, &used_sprite_sheets);
+                        if let Some(tile) = Self::convert_tile(&ctx, x as f32 * map.tile_width as f32 + map.tile_width as f32 / 2.0, y as f32 * map.tile_height as f32 + map.tile_height as f32 / 2.0, z) {
+                            if let Some(ctx) = ctx {
+                                used_sprite_sheets.insert(ctx.sprite_sheet_id);
+                            }
+                            entities.push(
+                                PrefabEntity { data: Some(tile) }
+                            );
+                        }
+                    }
+                }
+            }
+
+            for (z, group) in map.object_groups.iter().enumerate() {
+                for object in &group.objects {
+                    let ctx = SpriteContext::from_gid(object.gid, &map, &sprite_sheets, &used_sprite_sheets);
+                    if let Some(object) = Self::convert_object(&ctx, z, object) {
+                        if let Some(ctx) = ctx {
+                            used_sprite_sheets.insert(ctx.sprite_sheet_id);
+                        }
+                        entities.push(
+                            PrefabEntity { data: Some(object) }
+                        );
+                    }
+                }
+            }
+
+            let mut files:Vec<MapFile> = sprite_files.drain(..).enumerate().filter(|(i, _)| used_sprite_sheets.contains(&(*i as u32))).map(|(_, f)| f).collect();
+
+            let map = Prefab { entities: entities }; 
+            let buffer = ron::ser::to_string_pretty(&map, ron::ser::PrettyConfig::default())
+                .expect("Failed to encode map prefab file");
+            files.push(MapFile::Data(PathBuf::from("map.ron"), buffer.into_bytes()));
+
+            MapPrefab::new(files)
+        }
 }
 
 pub struct MapPrefab<Prefab, Proxy> {
@@ -104,11 +170,6 @@ impl<Prefab, Proxy> MapPrefab<Prefab, Proxy> {
     }
 }
 
-pub struct SimpleConverter<P> {
-    phantom: PhantomData<P>,
-    files: Vec<MapFile>,
-}
-
 #[derive(Debug, Clone, Deserialize, Serialize, PrefabData)]
 pub struct RealLevelPrefab {
     sheet: Option<RealSpriteSheetPrefab>,
@@ -121,86 +182,6 @@ pub struct RealLevelPrefab {
 #[derive(Default, Debug, Copy, Clone, Component, Serialize, Deserialize)]
 pub struct MapTile;
 
-
-impl TiledConverter<'_, RealLevelPrefab> for SimpleConverter<RealLevelPrefab> {
-    type PrefabProxy = LevelPrefab;
-
-    fn convert_tile(ctx: &SpriteContext, x: f32, y: f32, layer: usize) -> Option<Self::PrefabProxy> {
-        let render = SpriteRenderPrefab {
-            sheet: Some(SpriteSheetReference::Name(ctx.name.clone())),
-            sprite_number: ctx.sprite_id,
-        };
-        let mut transform = Transform::default();
-        transform.set_translation_xyz(
-            x,
-            y,
-            layer as f32,
-        );
-        Some(LevelPrefab {
-            sheet: ctx.sprite_sheet.clone(),
-            render: Some(render),
-            transform: Some(transform),
-            detail: Tile,
-        })
-    }
-
-    fn convert_object(object_type: &str, ctx: Option<&SpriteContext>, layer: usize) -> Option<Self::PrefabProxy> {
-        None
-    }
-
-    fn from_map(input: &Path, map_prefix: &Path) -> MapPrefab<RealLevelPrefab, Self::PrefabProxy> {
-        let input_dir = input.parent().unwrap();
-        let map = parse_file(input).unwrap();
-
-        let (mut sprite_files, sprite_sheets): (Vec<MapFile>, Vec<SpriteSheetPrefab>) = sprite_sheets_from_tilesets(&map, &input_dir, map_prefix).drain(..).unzip();
-
-        let mut used_spritesheets = HashSet::new();
-        let mut entities = Vec::new();
-        for (z, layer) in map.layers.iter().enumerate() {
-            for (y, row) in layer.tiles.iter().enumerate() {
-                for (x, gid) in row.iter().enumerate() {
-                    if *gid == 0 {
-                        continue;
-                    }
-                    let mut sprite_sheet_id = 0;
-                    let mut sprite_id = 0;
-                    for (i, tileset) in map.tilesets.iter().enumerate() {
-                        if tileset.first_gid > *gid {
-                            break;
-                        }
-                        sprite_sheet_id = i; 
-                        sprite_id = *gid as usize - tileset.first_gid as usize;
-                    }
-                    let sprite_sheet = if used_spritesheets.contains(&sprite_sheet_id) {
-                        None
-                    } else {
-                        used_spritesheets.insert(sprite_sheet_id);
-                        Some(sprite_sheets[sprite_sheet_id].clone())
-                    };
-                    let ctx = SpriteContext {
-                        sprite_sheet,
-                        name: format!("map_sprite_sheet_{}", sprite_sheet_id),
-                        sprite_id,
-                    };
-                    if let Some(tile) = Self::convert_tile(&ctx, x as f32 * map.tile_width as f32 + map.tile_width as f32 / 2.0, -(y as f32) * map.tile_height as f32 - map.tile_height as f32 / 2.0, z) {
-                        entities.push(
-                            PrefabEntity { data: Some(tile) }
-                        );
-                    }
-                }
-            }
-        }
-
-        let mut files:Vec<MapFile> = sprite_files.drain(..).enumerate().filter(|(i, _)| used_spritesheets.contains(i)).map(|(_, f)| f).collect();
-
-        let map = Prefab { entities: entities }; 
-        let buffer = ron::ser::to_string_pretty(&map, ron::ser::PrettyConfig::default())
-            .expect("Failed to encode map prefab file");
-        files.push(MapFile::Data(PathBuf::from("map.ron"), buffer.into_bytes()));
-
-        MapPrefab::new(files)
-    }
-}
 
 pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Path) -> Vec<(MapFile, SpriteSheetPrefab)> {
     let mut spritesheets = Vec::new();

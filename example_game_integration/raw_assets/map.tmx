@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="4">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" tilecount="3" columns="3">
+  <image source="tiles.png" width="96" height="32"/>
+ </tileset>
+ <tileset firstgid="4" name="objects" tilewidth="32" tileheight="32" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image width="32" height="32" source="ball.png"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="tiles" width="10" height="10">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,
+1,2,2,2,2,2,2,2,2,1,
+1,2,2,2,2,2,2,2,2,1,
+1,2,2,3,3,3,3,2,2,1,
+1,2,2,3,2,2,3,2,2,1,
+1,2,2,3,2,2,3,2,2,1,
+1,2,2,3,3,3,3,2,2,1,
+1,2,2,2,2,2,2,2,2,1,
+1,2,2,2,2,2,2,2,2,1,
+1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="3" type="static" gid="4" x="146" y="177" width="32" height="32"/>
+ </objectgroup>
+</map>

@@ -20,10 +20,10 @@ use amethyst::{
         GraphCreator, RenderingSystem,
     },
     utils::application_root_dir,
-    window::{ScreenDimensions, Window, WindowBundle},
+    window::{ScreenDimensions, Window, WindowBundle, DisplayConfig},
     Application, GameData, GameDataBuilder, SimpleState, SimpleTrans, StateData, Trans,
 };
-use game_integration::LevelPrefab;
+use example_game_integration::LevelPrefab;
 use std::sync::Arc;
 
 /// The main state
@@ -42,7 +42,7 @@ impl SimpleState for Example {
         // Starts asset loading
         let level_prefab = world.exec(|loader: PrefabLoader<'_, LevelPrefab>| {
             loader.load(
-                "prefab/map/map.ron",
+                "map/map.ron",
                 RonFormat,
                 self.progress_counter.as_mut().unwrap(),
             )
@@ -85,11 +85,10 @@ fn main() -> amethyst::Result<()> {
     amethyst::start_logger(Default::default());
 
     let app_root = application_root_dir()?;
-    let assets_directory = app_root.join("examples/assets/");
-    let display_config_path = app_root.join("examples/basic/resources/display_config.ron");
+    let assets_directory = app_root.join("assets/");
 
     let game_data = GameDataBuilder::default()
-        .with_bundle(WindowBundle::from_config_path(display_config_path))?
+        .with_bundle(WindowBundle::from_config(DisplayConfig::default()))?
         .with_bundle(TransformBundle::new())?
         .with(
             PrefabLoaderSystem::<LevelPrefab>::default(),

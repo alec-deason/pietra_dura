@@ -1,0 +1,33 @@
+[package]
+name = "example_game_integration"
+version = "0.1.0"
+authors = ["Alec Deason <alec@tinycountry.com>"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1.0.91", features=["derive"] }
+specs-derive = "*"
+structopt = { version = "0.2.15", optional = true }
+pietra_dura_tiled = { path = "../pietra_dura_tiled", optional = true }
+tiled = { version = "0.8.0", optional = true }
+
+
+[features]
+asset-prep = ["pietra_dura_tiled", "structopt", "tiled"]
+
+[lib]
+name = "example_game_integration"
+
+[[bin]]
+name = "game"
+path = "src/main.rs"
+
+[[bin]]
+name = "asset_prep"
+required-features = ["asset-prep"]
+path = "src/asset_prep.rs"
+
+
+[dependencies.amethyst]
+git = "https://github.com/amethyst/amethyst"
+features = ["nightly", "vulkan"]
