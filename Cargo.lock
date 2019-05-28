@@ -3654,6 +3654,7 @@ dependencies = [
  "ron 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.91 (registry+https://github.com/rust-lang/crates.io-index)",
  "sheep 0.1.0 (git+https://github.com/amethyst/sheep.git)",
+ "specs-derive 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "structopt 0.2.15 (registry+https://github.com/rust-lang/crates.io-index)",
  "tiled 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]

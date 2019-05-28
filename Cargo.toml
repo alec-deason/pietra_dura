@@ -18,6 +18,7 @@ image = "0.20"
 ron = "0.4"
 rendy = { version = "0.2", default-features = false, features = ["base", "wsi-winit", "empty", "mesh-obj", "texture-image", "texture-palette", "serde-1"] }
 serde = { version = "1.0.91", features=["derive"] }
+specs-derive = "*"
 
 [dependencies.amethyst]
 git = "https://github.com/amethyst/amethyst"
