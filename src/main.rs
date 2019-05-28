@@ -11,11 +11,13 @@ struct Cli {
     map: std::path::PathBuf,
     #[structopt(parse(from_os_str))]
     output: std::path::PathBuf,
+    #[structopt(parse(from_os_str))]
+    map_prefix: std::path::PathBuf,
 }
 
 fn main() -> Result<()> {
     let args = Cli::from_args();
-    SimpleConverter::<RealLevelPrefab>::from_map(&args.map)
+    SimpleConverter::<RealLevelPrefab>::from_map(&args.map, &args.map_prefix)
         .write(&args.output)?;
     Ok(())
 }

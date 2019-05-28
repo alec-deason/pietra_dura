@@ -42,7 +42,7 @@ impl SimpleState for Example {
         // Starts asset loading
         let level_prefab = world.exec(|loader: PrefabLoader<'_, LevelPrefab>| {
             loader.load(
-                "prefab/map/level.ron",
+                "prefab/map/map.ron",
                 RonFormat,
                 self.progress_counter.as_mut().unwrap(),
             )

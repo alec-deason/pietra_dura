@@ -3,7 +3,7 @@
         (
             data: Some((
                 sheet: Some(Sheet(
-                    texture: File("/home/alec/Code/tiled_preprocessor/game_integration/examples/assets/prefab/map/sprite_sheet_0.png", ("IMAGE", (
+                    texture: File("prefab/map/sprite_sheet_0.png", ("IMAGE", (
                         min_filter: Nearest,
                         mag_filter: Nearest,
                         mip_filter: Nearest,
@@ -52,10 +52,10 @@
                             ],
                         )),
                     ],
-                    name: Some("level_spritesheet_0"),
+                    name: Some("map_sprite_sheet_0"),
                 )),
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -70,7 +70,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -85,7 +85,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -100,7 +100,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -115,7 +115,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -130,7 +130,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -145,7 +145,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -160,7 +160,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -175,7 +175,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -190,7 +190,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -205,7 +205,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -220,7 +220,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -235,7 +235,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -250,7 +250,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -265,7 +265,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -280,7 +280,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -295,7 +295,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -310,7 +310,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -325,7 +325,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -340,7 +340,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -355,7 +355,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -370,7 +370,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -385,7 +385,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -400,7 +400,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -415,7 +415,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -430,7 +430,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -445,7 +445,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -460,7 +460,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -475,7 +475,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -490,7 +490,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -505,7 +505,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -520,7 +520,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -535,7 +535,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -550,7 +550,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -565,7 +565,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -580,7 +580,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -595,7 +595,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -610,7 +610,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -625,7 +625,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -640,7 +640,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -655,7 +655,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -670,7 +670,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -685,7 +685,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -700,7 +700,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -715,7 +715,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -730,7 +730,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -745,7 +745,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -760,7 +760,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -775,7 +775,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -790,7 +790,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -805,7 +805,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -820,7 +820,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -835,7 +835,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -850,7 +850,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -865,7 +865,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -880,7 +880,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -895,7 +895,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -910,7 +910,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -925,7 +925,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -940,7 +940,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -955,7 +955,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -970,7 +970,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -985,7 +985,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1000,7 +1000,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -1015,7 +1015,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -1030,7 +1030,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -1045,7 +1045,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 2,
                 )),
                 transform: Some((
@@ -1060,7 +1060,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1075,7 +1075,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1090,7 +1090,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1105,7 +1105,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1120,7 +1120,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1135,7 +1135,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1150,7 +1150,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1165,7 +1165,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1180,7 +1180,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1195,7 +1195,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1210,7 +1210,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1225,7 +1225,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1240,7 +1240,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1255,7 +1255,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1270,7 +1270,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1285,7 +1285,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1300,7 +1300,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1315,7 +1315,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1330,7 +1330,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1345,7 +1345,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1360,7 +1360,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1375,7 +1375,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 1,
                 )),
                 transform: Some((
@@ -1390,7 +1390,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1405,7 +1405,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1420,7 +1420,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1435,7 +1435,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1450,7 +1450,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1465,7 +1465,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1480,7 +1480,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1495,7 +1495,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1510,7 +1510,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1525,7 +1525,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
@@ -1540,7 +1540,7 @@
             data: Some((
                 sheet: None,
                 render: Some((
-                    sheet: Some("level_spritesheet_0"),
+                    sheet: Some("map_sprite_sheet_0"),
                     sprite_number: 0,
                 )),
                 transform: Some((
