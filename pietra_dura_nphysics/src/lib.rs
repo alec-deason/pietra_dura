@@ -71,6 +71,7 @@ impl<'s> PrefabData<'s> for PhysicsEntityPrefab {
         WriteStorage<'s, PhysicsEntity>,
         WriteExpect<'s, PhysicsWorld<f32>>,
         ReadStorage<'s, InitialPosition>,
+        WriteStorage<'s, NoRotate>,
         );
     type Result = ();
 
@@ -84,6 +85,7 @@ impl<'s> PrefabData<'s> for PhysicsEntityPrefab {
         let physics_entities = &mut data.0;
         let physics_world = &mut data.1;
         let starting_locations = &mut data.2;
+        let no_rotates = &mut data.3;
         let mut collider_descs = Vec::with_capacity(self.colliders.len());
         for collider in &self.colliders {
             let shape = match &collider.shape {
@@ -159,6 +161,14 @@ impl<'s> PrefabData<'s> for PhysicsEntityPrefab {
                     },
                     )
                 .unwrap();
+            if self.no_rotate {
+                no_rotates
+                    .insert(
+                        entity,
+                        NoRotate,
+                        )
+                    .unwrap();
+            }
         }
         Ok(())
     }
