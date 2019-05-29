@@ -66,6 +66,32 @@ pub struct PhysicsEntityPrefab {
     pub location: Option<(f32, f32)>,
 }   
 
+impl PhysicsEntityPrefab {
+    pub fn from_shape(shape: ShapePrefab, location: Option<(f32, f32)>, collider_only: bool, collider_location: Option<(f32, f32)>) -> Self {
+        PhysicsEntityPrefab {
+            colliders: vec![ColliderPrefab {
+                shape: shape,
+                density: 1.0,
+                restitution: 0.8,
+                friction: 0.5,
+                offset_x: 0.0,
+                offset_y: 0.0,
+                is_sensor: false,
+                collision_group: CollisionGroupPrefab {
+                    membership: vec![0],
+                    whitelist: vec![1, 2, 3],
+                    blacklist: vec![],
+                },
+                location: collider_location,
+            }],
+            collider_only: collider_only,
+            gravity_enabled: false,
+            no_rotate: false,
+            location: location,
+        }
+    }
+}
+
 impl<'s> PrefabData<'s> for PhysicsEntityPrefab {
     type SystemData = (
         WriteStorage<'s, PhysicsEntity>,

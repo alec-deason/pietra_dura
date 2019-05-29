@@ -195,11 +195,11 @@ pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Pat
             let tileset_sprite_columns = img.width / tileset.tile_width as i32;
             let tileset_sprite_rows = img.height / tileset.tile_height as i32;
 
-            for x in (0..tileset_sprite_rows).rev() {
-                for y in 0..tileset_sprite_columns {
+            for y in (0..tileset_sprite_rows).rev() {
+                for x in 0..tileset_sprite_columns {
                     sprites.push(SpritePosition {
-                        y: x as u32 * tileset.tile_width as u32,
-                        x: y as u32 * tileset.tile_height as u32,
+                        y: img.height as u32 - (y as u32 + 1) * tileset.tile_height as u32,
+                        x: x as u32 * tileset.tile_width as u32,
                         width: tileset.tile_width as u32,
                         height: tileset.tile_height as u32,
                         offsets: None,
