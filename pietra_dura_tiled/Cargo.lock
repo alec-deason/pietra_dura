@@ -2423,6 +2423,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "pietra_dura_tiled"
+version = "0.1.0"
+dependencies = [
+ "amethyst 0.10.0 (git+https://github.com/amethyst/amethyst)",
+ "image 0.20.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rendy 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ron 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.91 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sheep 0.1.0 (git+https://github.com/amethyst/sheep.git)",
+ "specs-derive 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tiled 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "pkg-config"
 version = "0.3.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3614,20 +3628,6 @@ dependencies = [
  "base64 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "flate2 1.0.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "xml-rs 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "tiled_preprocessor"
-version = "0.1.0"
-dependencies = [
- "amethyst 0.10.0 (git+https://github.com/amethyst/amethyst)",
- "image 0.20.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "rendy 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "ron 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde 1.0.91 (registry+https://github.com/rust-lang/crates.io-index)",
- "sheep 0.1.0 (git+https://github.com/amethyst/sheep.git)",
- "specs-derive 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "tiled 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]

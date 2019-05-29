@@ -15,8 +15,13 @@ pub struct Prefab<P> {
 }
 
 #[derive(Debug, Clone, Serialize)]
+pub struct ImageFormat {
+    pub sampler_info: SamplerInfo
+}
+
+#[derive(Debug, Clone, Serialize)]
 pub enum TexturePrefab {
-    File(String, (String, SamplerInfo)),
+    File(String, (String, ImageFormat)),
 }
 #[derive(Debug, Clone, Serialize)]
 pub enum SpriteSheetPrefab {

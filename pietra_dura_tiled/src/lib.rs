@@ -15,7 +15,7 @@ use std::fs::{copy, create_dir_all};
 
 use amethyst::{
     renderer::{
-        formats::texture::ImageFormat,
+        formats::texture::ImageFormat as RealImageFormat,
         sprite::{
             prefab::{SpriteSheetPrefab as RealSpriteSheetPrefab, SpriteRenderPrefab as RealSpriteRenderPrefab},
             SpriteList, SpritePosition, Sprites
@@ -208,12 +208,21 @@ pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Pat
                     });
                 }
             }
+            let mut sampler_info = RealImageFormat::default().0.sampler_info;
+            // I'm not sure if this is a bug in the ImageFormat or just something
+            // I'm not understanding but the default comes out with a lod_range
+            // of 0..-1536 which seems to be the result of an i16 overflowing.
+            // So, let's fix that up. It causes weird interpolation when the 
+            // sprites render otherwise.
+            sampler_info.lod_range = 0.0.into() .. 1000.0.into();
             let sprite_sheet = SpriteSheetPrefab::Sheet {
                 texture: TexturePrefab::File(
                     map_prefix.join(&texture_path).to_str().unwrap().to_string(),
                     (
                         "IMAGE".to_string(),
-                        Box::new(ImageFormat::default()).0.sampler_info,
+                        ImageFormat {
+                            sampler_info: sampler_info,
+                        },
                     ),
                 ),
                 sprites: vec![Sprites::List(SpriteList {
@@ -263,12 +272,16 @@ pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Pat
                 })
                 .collect();
 
+            let mut sampler_info = RealImageFormat::default().0.sampler_info;
+            sampler_info.lod_range = 0.0.into() .. 1000.0.into();
             let sprite_sheet = SpriteSheetPrefab::Sheet {
                 texture: TexturePrefab::File(
                     map_prefix.join(&texture_path).to_str().unwrap().to_string(),
                     (
                         "IMAGE".to_string(),
-                        Box::new(ImageFormat::default()).0.sampler_info,
+                        ImageFormat {
+                            sampler_info: sampler_info,
+                        },
                     ),
                 ),
                 sprites: vec![Sprites::List(SpriteList {
