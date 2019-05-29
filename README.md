@@ -3,3 +3,5 @@
 [pietra_dura_tiled](pietra_dura_tiled) is a flexible tool for turning [Tiled](https://www.mapeditor.org/) map files into loadable prefabs.
 
 See the [integration example](example_game_integration) for how to use the Tiled pipeline and integrate both tools into a game.
+
+Note: These crates use the master version of Amethyst not the stable release
