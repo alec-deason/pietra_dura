@@ -24,10 +24,11 @@ use nphysics2d::{
 pub const PHYSICS_SCALE:f32 = 10.0;
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
-pub struct CollisionGroupPrefab {
-    pub membership: Vec<usize>,
-    pub whitelist: Vec<usize>,
-    pub blacklist: Vec<usize>,
+pub struct CollisionGroupPrefab<CollisionTypeEnum>
+    where CollisionTypeEnum: Into<usize> + Copy {
+    pub membership: Vec<CollisionTypeEnum>,
+    pub whitelist: Vec<CollisionTypeEnum>,
+    pub blacklist: Vec<CollisionTypeEnum>,
 }
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub enum ShapePrefab {
@@ -36,7 +37,8 @@ pub enum ShapePrefab {
     Polygon { points: Vec<Point2<f32>>},
 }
 #[derive(Debug, Clone, Deserialize, Serialize)]
-pub struct ColliderPrefab {
+pub struct ColliderPrefab<CollisionTypeEnum> 
+    where CollisionTypeEnum: Into<usize> + Copy {
     pub shape: ShapePrefab,
     pub density: f32,
     pub restitution: f32,
@@ -44,7 +46,7 @@ pub struct ColliderPrefab {
     pub offset_x: f32,
     pub offset_y: f32,
     pub is_sensor: bool,
-    pub collision_group: CollisionGroupPrefab,
+    pub collision_group: CollisionGroupPrefab<CollisionTypeEnum>,
     pub location: Option<(f32, f32)>,
 }
 
@@ -58,15 +60,17 @@ pub struct InitialPosition {
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
-pub struct PhysicsEntityPrefab {
-    pub colliders: Vec<ColliderPrefab>,
+pub struct PhysicsEntityPrefab<CollisionTypeEnum>
+    where CollisionTypeEnum: Into<usize> + Copy {
+    pub colliders: Vec<ColliderPrefab<CollisionTypeEnum>>,
     pub gravity_enabled: bool,
     pub no_rotate: bool,
     pub collider_only: bool,
     pub location: Option<(f32, f32)>,
 }   
 
-impl PhysicsEntityPrefab {
+impl<CollisionTypeEnum> PhysicsEntityPrefab<CollisionTypeEnum>
+    where CollisionTypeEnum: Into<usize> + Copy {
     pub fn from_shape(shape: ShapePrefab, location: Option<(f32, f32)>, collider_only: bool, collider_location: Option<(f32, f32)>) -> Self {
         PhysicsEntityPrefab {
             colliders: vec![ColliderPrefab {
@@ -78,8 +82,8 @@ impl PhysicsEntityPrefab {
                 offset_y: 0.0,
                 is_sensor: false,
                 collision_group: CollisionGroupPrefab {
-                    membership: vec![0],
-                    whitelist: vec![1, 2, 3],
+                    membership: vec![],
+                    whitelist: vec![],
                     blacklist: vec![],
                 },
                 location: collider_location,
@@ -92,7 +96,8 @@ impl PhysicsEntityPrefab {
     }
 }
 
-impl<'s> PrefabData<'s> for PhysicsEntityPrefab {
+impl<'s, CollisionTypeEnum> PrefabData<'s> for PhysicsEntityPrefab<CollisionTypeEnum>
+    where CollisionTypeEnum: Into<usize> + Copy {
     type SystemData = (
         WriteStorage<'s, PhysicsEntity>,
         WriteExpect<'s, PhysicsWorld<f32>>,
@@ -131,16 +136,25 @@ impl<'s> PrefabData<'s> for PhysicsEntityPrefab {
                 &collider
                 .collision_group
                 .membership
+                .iter()
+                .map(|g| (*g).into())
+                .collect::<Vec<usize>>()
                 );
             group.set_whitelist(
                 &collider
                 .collision_group
                 .whitelist
+                .iter()
+                .map(|g| (*g).into())
+                .collect::<Vec<usize>>()
                 );
             group.set_blacklist(
                 &collider
                 .collision_group
                 .blacklist
+                .iter()
+                .map(|g| (*g).into())
+                .collect::<Vec<usize>>()
                 );
             let mut collider_desc = ColliderDesc::new(shape)
                 .collision_groups(group)

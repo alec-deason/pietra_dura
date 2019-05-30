@@ -38,11 +38,22 @@ pub struct LevelPrefab {
     detail: Detail,
 }
 
+#[derive(Copy, Clone, Debug, Deserialize, Serialize)]
+pub enum CollisionTypes {
+    Main = 0,
+    Other = 1,
+}
+impl Into<usize> for CollisionTypes {
+    fn into(self) -> usize {
+        self as usize
+    }
+}
+
 #[derive(Debug, Clone, Deserialize, Serialize, PrefabData)]
 pub enum Detail {
     Tile(#[prefab(Component)] Tile),
     StaticSprite(#[prefab(Component)] StaticSprite),
-    Physics(PhysicsEntityPrefab),
+    Physics(PhysicsEntityPrefab<CollisionTypes>),
 }
 #[derive(Default, Debug, Copy, Clone, Component, Serialize, Deserialize)]
 pub struct Tile;
@@ -152,8 +163,8 @@ impl TiledConverter<'_, LevelPrefab> for LevelPrefab {
                                     offset_y: 0.0,
                                     is_sensor: false,
                                     collision_group: CollisionGroupPrefab {
-                                        membership: vec![1],
-                                        whitelist: vec![1],
+                                        membership: vec![CollisionTypes::Main],
+                                        whitelist: vec![CollisionTypes::Main],
                                         blacklist: vec![],
                                     },
                                     location: None,
@@ -183,8 +194,8 @@ impl TiledConverter<'_, LevelPrefab> for LevelPrefab {
                                 offset_y: 0.0,
                                 is_sensor: false,
                                 collision_group: CollisionGroupPrefab {
-                                    membership: vec![1],
-                                    whitelist: vec![1],
+                                    membership: vec![CollisionTypes::Main],
+                                    whitelist: vec![CollisionTypes::Main],
                                     blacklist: vec![],
                                 },
                                 location: Some((object.x + width / 2.0, -object.y - height / 2.0)),

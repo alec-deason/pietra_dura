@@ -1629,10 +1629,10 @@
                             is_sensor: false,
                             collision_group: (
                                 membership: [
-                                    1,
+                                    Main,
                                 ],
                                 whitelist: [
-                                    1,
+                                    Main,
                                 ],
                                 blacklist: [
                                 ],
@@ -1667,10 +1667,10 @@
                             is_sensor: false,
                             collision_group: (
                                 membership: [
-                                    1,
+                                    Main,
                                 ],
                                 whitelist: [
-                                    1,
+                                    Main,
                                 ],
                                 blacklist: [
                                 ],
@@ -1705,10 +1705,10 @@
                             is_sensor: false,
                             collision_group: (
                                 membership: [
-                                    1,
+                                    Main,
                                 ],
                                 whitelist: [
-                                    1,
+                                    Main,
                                 ],
                                 blacklist: [
                                 ],
@@ -1743,10 +1743,10 @@
                             is_sensor: false,
                             collision_group: (
                                 membership: [
-                                    1,
+                                    Main,
                                 ],
                                 whitelist: [
-                                    1,
+                                    Main,
                                 ],
                                 blacklist: [
                                 ],
@@ -1781,10 +1781,10 @@
                             is_sensor: false,
                             collision_group: (
                                 membership: [
-                                    1,
+                                    Main,
                                 ],
                                 whitelist: [
-                                    1,
+                                    Main,
                                 ],
                                 blacklist: [
                                 ],
