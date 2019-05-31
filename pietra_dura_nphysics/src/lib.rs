@@ -89,7 +89,7 @@ impl<CollisionTypeEnum> PhysicsEntityPrefab<CollisionTypeEnum>
                 location: collider_location,
             }],
             collider_only: collider_only,
-            gravity_enabled: false,
+            gravity_enabled: true,
             no_rotate: false,
             location: location,
         }
@@ -171,10 +171,10 @@ impl<'s, CollisionTypeEnum> PrefabData<'s> for PhysicsEntityPrefab<CollisionType
                         y*PHYSICS_SCALE,
                 ));
             }
+            collider_desc.set_user_data(Some(Box::new(entity)));
             if self.collider_only {
                 collider_desc.build(physics_world);
             } else {
-                collider_desc.set_user_data(Some(Box::new(entity)));
                 collider_descs.push(collider_desc);
             }
         }
