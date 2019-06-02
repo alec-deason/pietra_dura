@@ -40,6 +40,8 @@ pub struct SpriteContext {
     pub name: String,
     pub sprite_sheet_id: u32,
     pub sprite_id: u32,
+    pub sprite_width: u32,
+    pub sprite_height: u32,
 }
 
 impl SpriteContext {
@@ -47,23 +49,28 @@ impl SpriteContext {
         if gid != 0 {
             let mut sprite_sheet_id = 0u32;
             let mut sprite_id = 0;
+            let mut map_tileset = &map.tilesets[0];
             for (i, tileset) in map.tilesets.iter().enumerate() {
                 if tileset.first_gid > gid {
                     break;
                 }
                 sprite_sheet_id = i as u32; 
                 sprite_id = gid - tileset.first_gid;
+                map_tileset = tileset;
             }
+            let sprite_sheet = &sprite_sheets[sprite_sheet_id as usize];
             let sprite_sheet = if used_sprite_sheets.contains(&sprite_sheet_id) {
                 None
             } else {
-                Some(sprite_sheets[sprite_sheet_id as usize].clone())
+                Some(sprite_sheet.clone())
             };
             Some(SpriteContext {
                 sprite_sheet,
                 name: format!("map_sprite_sheet_{}", sprite_sheet_id),
                 sprite_sheet_id,
                 sprite_id,
+                sprite_width: map_tileset.tile_width,
+                sprite_height: map_tileset.tile_height,
             })
         } else {
             None
@@ -94,7 +101,7 @@ pub trait TiledConverter<'s, P>
                 for (y, row) in layer.tiles.iter().enumerate() {
                     for (x, gid) in row.iter().enumerate() {
                         let ctx = SpriteContext::from_gid(*gid, &map, &sprite_sheets, &used_sprite_sheets);
-                        if let Some(tile) = Self::convert_tile(&ctx, x as f32 * map.tile_width as f32 + map.tile_width as f32 / 2.0, y as f32 * map.tile_height as f32 + map.tile_height as f32 / 2.0, z) {
+                        if let Some(tile) = Self::convert_tile(&ctx, x as f32 * map.tile_width as f32 + map.tile_width as f32 / 2.0, y as f32 * -(map.tile_height as f32) - map.tile_height as f32 / 2.0, z) {
                             if let Some(ctx) = ctx {
                                 used_sprite_sheets.insert(ctx.sprite_sheet_id);
                             }
