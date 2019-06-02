@@ -1,6 +1,6 @@
 mod prefab_proxies;
 
-use std::collections::HashSet;
+use std::collections::{HashSet, HashMap};
 use image::{
     png::PNGEncoder,
     ColorType,
@@ -45,21 +45,12 @@ pub struct SpriteContext {
 }
 
 impl SpriteContext {
-    pub fn from_gid(gid: u32, map: &Map, sprite_sheets: &Vec<SpriteSheetPrefab>, used_sprite_sheets: &HashSet<u32>) -> Option<Self> {
+    pub fn from_gid(gid: u32, map: &Map, gid_map: &HashMap<usize, (usize, usize)>, sprite_sheets: &Vec<SpriteSheetPrefab>, used_sprite_sheets: &HashSet<u32>) -> Option<Self> {
         if gid != 0 {
-            let mut sprite_sheet_id = 0u32;
-            let mut sprite_id = 0;
-            let mut map_tileset = &map.tilesets[0];
-            for (i, tileset) in map.tilesets.iter().enumerate() {
-                if tileset.first_gid > gid {
-                    break;
-                }
-                sprite_sheet_id = i as u32; 
-                sprite_id = gid - tileset.first_gid;
-                map_tileset = tileset;
-            }
-            let sprite_sheet = &sprite_sheets[sprite_sheet_id as usize];
-            let sprite_sheet = if used_sprite_sheets.contains(&sprite_sheet_id) {
+            let (sprite_sheet_id, sprite_id) = &gid_map[&(gid as usize)];
+            let map_tileset = &map.tilesets[*sprite_sheet_id];
+            let sprite_sheet = &sprite_sheets[*sprite_sheet_id as usize];
+            let sprite_sheet = if used_sprite_sheets.contains(&(*sprite_sheet_id as u32)) {
                 None
             } else {
                 Some(sprite_sheet.clone())
@@ -67,8 +58,8 @@ impl SpriteContext {
             Some(SpriteContext {
                 sprite_sheet,
                 name: format!("map_sprite_sheet_{}", sprite_sheet_id),
-                sprite_sheet_id,
-                sprite_id,
+                sprite_sheet_id: *sprite_sheet_id as u32,
+                sprite_id: *sprite_id as u32,
                 sprite_width: map_tileset.tile_width,
                 sprite_height: map_tileset.tile_height,
             })
@@ -93,14 +84,15 @@ pub trait TiledConverter<'s, P>
             let input_dir = input.parent().unwrap();
             let map = parse_file(input).unwrap();
 
-            let (mut sprite_files, sprite_sheets): (Vec<MapFile>, Vec<SpriteSheetPrefab>) = sprite_sheets_from_tilesets(&map, &input_dir, map_prefix).drain(..).unzip();
+            let (mut sprite_sheets, gid_map) = sprite_sheets_from_tilesets(&map, &input_dir, map_prefix);
+            let (mut sprite_files, sprite_sheets): (Vec<MapFile>, Vec<SpriteSheetPrefab>) = sprite_sheets.drain(..).unzip();
 
             let mut used_sprite_sheets = HashSet::new();
             let mut entities = Vec::new();
             for (z, layer) in map.layers.iter().enumerate() {
                 for (y, row) in layer.tiles.iter().enumerate() {
                     for (x, gid) in row.iter().enumerate() {
-                        let ctx = SpriteContext::from_gid(*gid, &map, &sprite_sheets, &used_sprite_sheets);
+                        let ctx = SpriteContext::from_gid(*gid, &map, &gid_map, &sprite_sheets, &used_sprite_sheets);
                         if let Some(tile) = Self::convert_tile(&ctx, x as f32 * map.tile_width as f32 + map.tile_width as f32 / 2.0, y as f32 * -(map.tile_height as f32) - map.tile_height as f32 / 2.0, z) {
                             if let Some(ctx) = ctx {
                                 used_sprite_sheets.insert(ctx.sprite_sheet_id);
@@ -115,7 +107,7 @@ pub trait TiledConverter<'s, P>
 
             for (z, group) in map.object_groups.iter().enumerate() {
                 for object in &group.objects {
-                    let ctx = SpriteContext::from_gid(object.gid, &map, &sprite_sheets, &used_sprite_sheets);
+                    let ctx = SpriteContext::from_gid(object.gid, &map, &gid_map, &sprite_sheets, &used_sprite_sheets);
                     if let Some(object) = Self::convert_object(&ctx, z, object) {
                         if let Some(ctx) = ctx {
                             used_sprite_sheets.insert(ctx.sprite_sheet_id);
@@ -190,10 +182,12 @@ pub struct RealLevelPrefab {
 pub struct MapTile;
 
 
-pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Path) -> Vec<(MapFile, SpriteSheetPrefab)> {
+pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Path) -> (Vec<(MapFile, SpriteSheetPrefab)>, HashMap<usize, (usize, usize)>) {
     let mut spritesheets = Vec::new();
+    let mut gid_to_sprite = HashMap::new();
     for (i, tileset) in map.tilesets.iter().enumerate() {
         let base_path = PathBuf::from(format!("sprite_sheet_{}", i));
+
         if !tileset.images.is_empty() {
             let img = &tileset.images[0];
             let texture_path = base_path.with_extension("png");
@@ -202,8 +196,10 @@ pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Pat
             let tileset_sprite_columns = img.width / tileset.tile_width as i32;
             let tileset_sprite_rows = img.height / tileset.tile_height as i32;
 
+
             for y in (0..tileset_sprite_rows).rev() {
                 for x in 0..tileset_sprite_columns {
+                    gid_to_sprite.insert(sprites.len() + tileset.first_gid as usize, (spritesheets.len(), sprites.len()));
                     sprites.push(SpritePosition {
                         y: img.height as u32 - (y as u32 + 1) * tileset.tile_height as u32,
                         x: x as u32 * tileset.tile_width as u32,
@@ -245,6 +241,7 @@ pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Pat
                     .pixels()
                     .flat_map(|it| it.data.iter().map(|it| *it))
                     .collect::<Vec<u8>>();
+                gid_to_sprite.insert(tileset.first_gid as usize + tile.id as usize, (spritesheets.len(), images.len()));
                 images.push(InputSprite {
                     dimensions,
                     bytes: bytes.clone(),
@@ -292,5 +289,5 @@ pub fn sprite_sheets_from_tilesets(map: &Map, input_dir: &Path, map_prefix: &Pat
             spritesheets.push((MapFile::Data(texture_path, buffer), sprite_sheet));
         }
     }
-    spritesheets
+    (spritesheets, gid_to_sprite)
 }
