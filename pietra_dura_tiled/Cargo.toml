@@ -5,7 +5,7 @@ authors = ["Alec Deason <alec@tinycountry.com>"]
 edition = "2018"
 
 [dependencies]
-sheep = { path = "../../Vendor/sheep/sheep" }
+sheep = { git = "https://github.com/amethyst/sheep.git" }
 tiled = "0.8.0"
 image = "0.20"
 ron = "0.4"
