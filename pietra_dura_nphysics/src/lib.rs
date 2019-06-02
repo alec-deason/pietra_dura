@@ -36,6 +36,23 @@ pub enum ShapePrefab {
     Rect { width: f32, height: f32 },
     Polygon { points: Vec<Point2<f32>>},
 }
+
+impl ShapePrefab {
+    fn size(&self) -> (f32, f32) {
+        match self {
+            ShapePrefab::Ball { radius } => {
+                (*radius*2.0, *radius*2.0)
+            },
+            ShapePrefab::Rect { width, height } => {
+                (*width, *height)
+            },
+            ShapePrefab::Polygon { points } => {
+                (0.0, 0.0)
+            },
+        }
+    }
+}
+
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct ColliderPrefab<CollisionTypeEnum> 
     where CollisionTypeEnum: Into<usize> + Copy {
