@@ -9,7 +9,7 @@ edition = "2018"
 [dependencies]
 nalgebra = "0.18.0"
 ncollide2d = "0.19.1"
-nphysics2d = { url = "https://github.com/rustsim/nphysics.git" }
+nphysics2d = "0.11.1"
 serde = { version = "1.0.91", features=["derive"] }
 specs-derive = "*"
 
