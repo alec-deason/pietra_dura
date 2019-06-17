@@ -17,7 +17,7 @@ use ncollide2d::{
 };
 use nphysics2d::{
     material::{BasicMaterial, MaterialHandle},
-    object::{BodyHandle, ColliderDesc, RigidBodyDesc},
+    object::{BodyHandle, ColliderDesc, RigidBodyDesc, BodyPartHandle},
     world::World as PhysicsWorld,
 };
 
@@ -111,25 +111,13 @@ impl<CollisionTypeEnum> PhysicsEntityPrefab<CollisionTypeEnum>
             location: location,
         }
     }
-}
 
-impl<'s, CollisionTypeEnum> PrefabData<'s> for PhysicsEntityPrefab<CollisionTypeEnum>
-    where CollisionTypeEnum: Into<usize> + Copy {
-    type SystemData = (
-        WriteStorage<'s, PhysicsEntity>,
-        WriteExpect<'s, PhysicsWorld<f32>>,
-        ReadStorage<'s, InitialPosition>,
-        WriteStorage<'s, NoRotate>,
-        );
-    type Result = ();
-
-    fn add_to_entity(
+    pub fn add_to_entity_with_handle(
         &self,
         entity: Entity,
-        data: &mut Self::SystemData,
-        _: &[Entity],
-        _: &[Entity],
-        ) -> Result<(), Error> {
+        data: &mut <PhysicsEntityPrefab<CollisionTypeEnum> as PrefabData>::SystemData,
+        composite_body_id: Option<usize>,
+        ) -> Result<Option<BodyHandle>, Error> {
         let physics_entities = &mut data.0;
         let physics_world = &mut data.1;
         let starting_locations = &mut data.2;
@@ -157,6 +145,9 @@ impl<'s, CollisionTypeEnum> PrefabData<'s> for PhysicsEntityPrefab<CollisionType
                 .map(|g| (*g).into())
                 .collect::<Vec<usize>>()
                 );
+            if let Some(composite_id) = composite_body_id {
+                group.modify_membership(composite_id, true);
+            }
             group.set_whitelist(
                 &collider
                 .collision_group
@@ -173,6 +164,9 @@ impl<'s, CollisionTypeEnum> PrefabData<'s> for PhysicsEntityPrefab<CollisionType
                 .map(|g| (*g).into())
                 .collect::<Vec<usize>>()
                 );
+            if let Some(composite_id) = composite_body_id {
+                group.modify_blacklist(composite_id, true);
+            }
             let mut collider_desc = ColliderDesc::new(shape)
                 .collision_groups(group)
                 .material(MaterialHandle::new(BasicMaterial {
@@ -226,7 +220,31 @@ impl<'s, CollisionTypeEnum> PrefabData<'s> for PhysicsEntityPrefab<CollisionType
                         )
                     .unwrap();
             }
+            Ok(Some(body.handle()))
+        } else {
+            Ok(None)
         }
+    }
+}
+
+impl<'s, CollisionTypeEnum> PrefabData<'s> for PhysicsEntityPrefab<CollisionTypeEnum>
+    where CollisionTypeEnum: Into<usize> + Copy {
+    type SystemData = (
+        WriteStorage<'s, PhysicsEntity>,
+        WriteExpect<'s, PhysicsWorld<f32>>,
+        ReadStorage<'s, InitialPosition>,
+        WriteStorage<'s, NoRotate>,
+        );
+    type Result = ();
+
+    fn add_to_entity(
+        &self,
+        entity: Entity,
+        data: &mut Self::SystemData,
+        _: &[Entity],
+        _: &[Entity],
+        ) -> Result<(), Error> {
+        self.add_to_entity_with_handle(entity, data, None)?;
         Ok(())
     }
 }
